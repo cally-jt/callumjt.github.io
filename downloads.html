@@ -80,14 +80,27 @@
 	border: 10px solid;
 	width: 250px;
 	height: 300px;
-	border-color: rgba(50,54,76,1);
+	border-color: #991b1b;
 	position: relative;
 	border-radius: 10px;
 	top: 80px;
 	left: 10px;
 	padding: 20px;
-	background-color: rgba(0,0,0,1);
+	background-color: #7f1d1d;
 	color: white;
+	text-align: center;
+	}
+	
+	.text {
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	top: 1rem;
+	position: relative;
+	}
+	
+	.downloads {
+	border-top: white solid 1px;
 	}
 	
 	</style>
@@ -97,18 +110,18 @@
 	</div>
 	<div class="Navflex">
 	<div class="flex">
-		<a href="https://callumjt.github.io/website/home">
+		<a href="/home">
 			<div class="home">
 				<h2 style="color: white; text-align: center;">Home</h2>
 			</div>
 		</a>
-		<a href="https://callumjt.github.io/website/downloads">	
+		<a href="/downloads">	
 			<div class="download">
 				<h2 style="color: white;">Download Games</h2>
 			</div>
 		</a>
 	</div>
-	<a href="https://callumjt.github.io/website/home">
+	<a href="/home">
 		<div class="logo">
 			<img src="storing/Callumjt.png">
 		</div>
@@ -120,12 +133,14 @@
 				<h2>Exo os</h2>
 				<p>V2.4.BETA</p>
 				<p>Exo os is an os that im making. no its not a real os its just for fun.</p>
-				<a href="WebsiteDownloads/downloads/os/os-latest.sb3">
-					<p>Download latest build</p>
-				</a>
-				<a href="">
-					<p>look at old builds! (soon)</p>
-				</a>
+				<div class="downloads">
+					<a href="WebsiteDownloads/downloads/os/os-latest.sb3" class="text">
+						<p><u>Download latest build</u></p>
+					</a>
+					<a href="" class="text">
+						<p><u>look at old builds! (soon)</u></p>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
