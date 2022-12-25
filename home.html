@@ -18,28 +18,38 @@
 	.flex {
 	display: flex;
 	justify-content: flex-end;
-	gap: 100px;
-	width: 87%;
+	gap: 80px;
+	width: 95%;
 	}
 	
 	.home {
 	padding: 0.2rem;
-	width: 3vw;
+	width: 48px;
 	position: absolute;
-	top: -10px;
+	top: 10px;
 	background-color: rgba(85, 85, 85, 0);
 	z-index: 1;
-	height: 0vw;
+	height: 48px;
+	}
+	
+	.about {
+	padding: 0.2rem;
+	width: 48px;
+	position: absolute;
+	top: 10px;
+	background-color: rgba(85, 85, 85, 0);
+	z-index: 2;
+	height: 48px;
 	}
 	
 	.download {
 	padding: 0.2rem;
-	width: 12vw;
+	width: 48px;
 	position: absolute;
-	top: -10px;
+	top: 10px;
 	background-color: rgba(85, 85, 85, 0);
 	z-index: 2;
-	height: 0vw;
+	height: 48px;
 	}
 		
 	.desc {
@@ -71,12 +81,17 @@
 	<div class="flex">
 		<a href="/home">
 			<div class="home">
-				<h2 style="color: white; text-align: center;">Home</h2>
+				<img src="storing/home.png" width="48px" height="48px">
+			</div>
+		</a>
+		<a href="/about">
+			<div class="about">
+				<img src="storing/user.png" width="48px" height="48px">
 			</div>
 		</a>
 		<a href="/downloads">	
 			<div class="download">
-				<h2 style="color: white;">Download Games</h2>
+				<img src="storing/download.png" width="48px" height="48px">
 			</div>
 		</a>
 	</div>
@@ -85,10 +100,6 @@
 			<img src="storing/Callumjt.png">
 		</div>
 	</a>
-	</div>
-	<div class="desc">
-		<img src="storing/pic1.webp" style="top: 0px;">
-		<p style="color: white;">Hello, im callum (also known as callumjt) and i make games for fun.</p>
 	</div>
 </body>
 </html>
