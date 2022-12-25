@@ -2,76 +2,6 @@
 <html>
 <head>
 	<style>
-	.navbar {
-	background-color: rgba(11, 110, 165, 0);
-    color: white;
-    padding: 1.4rem;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    z-index: -1;
-	}
-	
-	.flex {
-	display: flex;
-	justify-content: flex-end;
-	gap: 50px;
-	width: 97%;
-	}
-	
-	.home {
-	padding: 0.2rem;
-	width: 32px;
-	position: absolute;
-	top: 10px;
-	background-color: rgba(85, 85, 85, 0);
-	z-index: 1;
-	height: 32px;
-	}
-	
-	.about {
-	padding: 0.2rem;
-	width: 32px;
-	position: absolute;
-	top: 10px;
-	background-color: rgba(85, 85, 85, 0);
-	z-index: 2;
-	height: 32px;
-	}
-	
-	.download {
-	padding: 0.2rem;
-	width: 32px;
-	position: absolute;
-	top: 10px;
-	background-color: rgba(85, 85, 85, 0);
-	z-index: 2;
-	height: 32px;
-	}
-		
-	.desc {
-	text-align: center;
-	top: 100px;
-	position: absolute;
-	width: 99%;
-	}
-	
-	.Navflex {
-	width: 100%;
-	}
-	
-	.logo {
-	padding: 0.2rem;
-	width: 119px;
-	position: absolute;
-	top: 10px;
-	background-color: rgba(85, 85, 85, 0);
-	z-index: 3;
-	height: 29px;
-	}
 	
 	.flexdown {
 	display: flex;
@@ -114,6 +44,7 @@
 	}
 	
 	</style>
+	<link rel="stylesheet" href="global.css">
 </head>
 <body style="font-family: arial; background: linear-gradient(#0a0a0a, #3a060c) fixed;">
 	<div class="navbar">
@@ -122,17 +53,17 @@
 	<div class="flex">
 		<a href="/home">
 			<div class="home">
-				<img src="storing/home.png" width="32px" height="32px">
+				<img src="storing/home.png" class="home">
 			</div>
 		</a>
 		<a href="/about">
 			<div class="about">
-				<img src="storing/user.png" width="32px" height="32px">
+				<img src="storing/user.png" class="about">
 			</div>
 		</a>
 		<a href="/downloads">	
 			<div class="download">
-				<img src="storing/download.png" width="32px" height="32px">
+				<img src="storing/download.png" class="download">
 			</div>
 		</a>
 	</div>
