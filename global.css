@@ -14,45 +14,45 @@
 	.flex {
 	display: flex;
 	justify-content: flex-end;
-	gap: 50px;
-	width: 97%;
+	gap: 53px;
+	width: 96%;
 	}
 	
 	.home {
 	padding: 0.2rem;
-	width: 32px;
+	width: 38px;
 	position: absolute;
 	top: 10px;
 	background-color: rgba(85, 85, 85, 0);
 	z-index: 1;
-	height: 32px;
+	height: 38px;
 	}
 	
 	.about {
 	padding: 0.2rem;
-	width: 32px;
+	width: 38px;
 	position: absolute;
 	top: 10px;
 	background-color: rgba(85, 85, 85, 0);
 	z-index: 2;
-	height: 32px;
+	height: 38px;
 	}
 	
 	.download {
 	padding: 0.2rem;
-	width: 32px;
+	width: 38px;
 	position: absolute;
 	top: 10px;
 	background-color: rgba(85, 85, 85, 0);
 	z-index: 2;
-	height: 32px;
+	height: 38px;
 	}
 	
 	.logo {
 	padding: 0.2rem;
 	width: 119px;
 	position: absolute;
-	top: 10px;
+	top: -25px;
 	background-color: rgba(85, 85, 85, 0);
 	z-index: 3;
 	height: 29px;
