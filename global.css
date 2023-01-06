@@ -19,6 +19,8 @@
 	}
 	
 	.home {
+	animation-name: homeOff;
+	animation-duration: 0.5s;
 	padding: 0.2rem;
 	width: 38px;
 	position: absolute;
@@ -29,6 +31,8 @@
 	}
 	
 	.about {
+	animation-name: aboutOff;
+	animation-duration: 0.5s;
 	padding: 0.2rem;
 	width: 38px;
 	position: absolute;
@@ -39,6 +43,8 @@
 	}
 	
 	.download {
+	animation-name: downloadOff;
+	animation-duration: 0.5s;
 	padding: 0.2rem;
 	width: 38px;
 	position: absolute;
@@ -49,15 +55,83 @@
 	}
 	
 	.logo {
+	animation-name: logoOff;
+	animation-duration: 0.5s;
 	padding: 0.2rem;
 	width: 119px;
 	position: absolute;
-	top: -25px;
-	background-color: rgba(85, 85, 85, 0);
+	top: -20px;
+	color: white;
 	z-index: 3;
 	height: 29px;
+	font-size: xx-large;
 	}
 	
 	.Navflex {
 	width: 100%;
+	}
+
+	.logo:hover {
+		animation-name: logoOn;
+		animation-duration: 0.5s;
+		color:rgb(126, 25, 221);
+		top: -25px;
+	}
+
+	.download:hover {
+		animation-name: downloadOn;
+		animation-duration: 0.5s;
+		top: 7px
+	}
+
+	.about:hover {
+		animation-name: aboutOn;
+		animation-duration: 0.5s;
+		top: 7px
+	}
+
+	.home:hover {
+		animation-name: homeOn;
+		animation-duration: 0.5s;
+		top: 7px
+	}
+
+	@keyframes logoOn {
+		0% {color:white; top: -20px;}
+		100% {color: rgb(126, 25, 221); top: -25px}
+	}
+
+	@keyframes logoOff {
+		0% {color: rgb(126, 25, 221); top: -25px}
+		100% {color:white; top: -20px;}
+	}
+
+	@keyframes downloadOn {
+		0% {top: 10px;}
+		100% {top: 7px}
+	}
+
+	@keyframes downloadOff {
+		0% {top: 7px;}
+		100% {top: 10px}
+	}
+
+	@keyframes aboutOn {
+		0% {top: 10px;}
+		100% {top: 7px}
+	}
+
+	@keyframes aboutOff {
+		0% {top: 7px;}
+		100% {top: 10px}
+	}
+
+	@keyframes homeOn {
+		0% {top: 10px;}
+		100% {top: 7px}
+	}
+
+	@keyframes homeOff {
+		0% {top: 7px;}
+		100% {top: 10px}
 	}
