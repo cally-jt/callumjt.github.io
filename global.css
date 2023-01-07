@@ -135,3 +135,18 @@
 		0% {top: 7px;}
 		100% {top: 10px}
 	}
+
+	.homea {
+		position: absolute;
+		font-size: 3rem;
+		right: 50%;
+		transform: translate(50%, 0);
+		color: white;
+		transition: all cubic-bezier(.77,.08,.83,.67) 0.2s;
+	  }
+	  
+	  .homea:hover {
+		color: sky;
+		transform: scale(1.2, 1.2) translate(50%, 0);
+		right: 55%;
+	  }
