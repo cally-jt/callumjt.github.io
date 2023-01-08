@@ -1,3 +1,13 @@
+	:root {
+		--background1: #510797;
+		--background2: rgb(0, 0, 0);
+	}
+	
+	body {
+		font-family: arial;
+		background: linear-gradient(var(--background1), var(--background2)) fixed;
+	}
+	
 	.navbar {
 	background-color: rgba(11, 110, 165, 0);
     color: white;
