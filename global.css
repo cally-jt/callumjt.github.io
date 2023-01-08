@@ -66,6 +66,19 @@
 	height: 38px;
 	transform: scale(1);
 	}
+
+	.socialt {
+	animation-name: socialOff;
+	animation-duration: 0.5s;
+	padding: 0.2rem;
+	width: 38px;
+	position: absolute;
+	top: 10px;
+	background-color: rgba(85, 85, 85, 0);
+	z-index: 2;
+	height: 38px;
+	transform: scale(1);
+		}
 	
 	.logo {
 	animation-name: logoOff;
@@ -114,6 +127,13 @@
 		transform: scale(1.1);
 	}
 
+	.socialt:hover {
+		animation-name: socialOn;
+		animation-duration: 0.5s;
+		top: 7px;
+		transform: scale(1.1);
+	}
+
 	@keyframes logoOn {
 		0% {color:white; top: -20px; transform: scale(1);}
 		100% {color: rgb(126, 25, 221); top: -30px; transform: scale(1.1);}
@@ -154,6 +174,16 @@
 		100% {top: 10px; transform: scale(1);}
 	}
 
+	@keyframes socialOn {
+		0% {top: 10px; transform: scale(1);}
+		100% {top: 7px; transform: scale(1.1);}
+	}
+
+	@keyframes socialOff {
+		0% {top: 7px; transform: scale(1.1);}
+		100% {top: 10px; transform: scale(1);}
+	}
+
 	.homea {
 		position: absolute;
 		font-size: 3rem;
@@ -165,6 +195,6 @@
 	  
 	  .homea:hover {
 		transform: scale(1.2, 1.2) translate(50%, 0);
-		right: 55%;
-		color: blue;
+		right: 52%;
+		color: rgb(29, 243, 243);
 	  }
