@@ -28,6 +28,7 @@
 	background-color: rgba(85, 85, 85, 0);
 	z-index: 1;
 	height: 38px;
+	transform: scale(1);
 	}
 	
 	.about {
@@ -40,6 +41,7 @@
 	background-color: rgba(85, 85, 85, 0);
 	z-index: 2;
 	height: 38px;
+	transform: scale(1);
 	}
 	
 	.download {
@@ -52,6 +54,7 @@
 	background-color: rgba(85, 85, 85, 0);
 	z-index: 2;
 	height: 38px;
+	transform: scale(1);
 	}
 	
 	.logo {
@@ -65,6 +68,7 @@
 	z-index: 3;
 	height: 29px;
 	font-size: xx-large;
+	transform: scale(1);
 	}
 	
 	.Navflex {
@@ -75,65 +79,69 @@
 		animation-name: logoOn;
 		animation-duration: 0.5s;
 		color:rgb(126, 25, 221);
-		top: -25px;
+		top: -30px;
+		transform: scale(1.1);
 	}
 
 	.download:hover {
 		animation-name: downloadOn;
 		animation-duration: 0.5s;
-		top: 7px
+		top: 7px;
+		transform: scale(1.1);
 	}
 
 	.about:hover {
 		animation-name: aboutOn;
 		animation-duration: 0.5s;
-		top: 7px
+		top: 7px;
+		transform: scale(1.1);
 	}
 
 	.home:hover {
 		animation-name: homeOn;
 		animation-duration: 0.5s;
-		top: 7px
+		top: 7px;
+		transform: scale(1.1);
 	}
 
 	@keyframes logoOn {
-		0% {color:white; top: -20px;}
-		100% {color: rgb(126, 25, 221); top: -25px}
+		0% {color:white; top: -20px; transform: scale(1);}
+		100% {color: rgb(126, 25, 221); top: -30px; transform: scale(1.1);}
 	}
 
 	@keyframes logoOff {
-		0% {color: rgb(126, 25, 221); top: -25px}
-		100% {color:white; top: -20px;}
+		0% {color: rgb(126, 25, 221); top: -30px; transform: scale(1.1);}
+		100% {color:white; top: -20px; transform: scale(1);}
 	}
 
 	@keyframes downloadOn {
-		0% {top: 10px;}
-		100% {top: 7px}
+		0% {top: 10px; transform: scale(1);}
+		100% {top: 7px; transform: scale(1.1);}
 	}
 
 	@keyframes downloadOff {
-		0% {top: 7px;}
-		100% {top: 10px}
+		0% {top: 7px; transform: scale(1.1);}
+		100% {top: 10px; transform: scale(1);}
 	}
 
 	@keyframes aboutOn {
-		0% {top: 10px;}
-		100% {top: 7px}
+		0% {top: 10px; transform: scale(1);}
+		100% {top: 7px; transform: scale(1.1);}
 	}
 
 	@keyframes aboutOff {
-		0% {top: 7px;}
-		100% {top: 10px}
+		0% {top: 7px; transform: scale(1.1);}
+		100% {top: 10px; transform: scale(1);}
 	}
 
 	@keyframes homeOn {
-		0% {top: 10px;}
-		100% {top: 7px}
+		0% {top: 10px; transform: scale(1);}
+		100% {top: 7px; transform: scale(1.1);}
 	}
 
 	@keyframes homeOff {
-		0% {top: 7px;}
-		100% {top: 10px}
+		0% {top: 7px; transform: scale(1.1);}
+		100% {top: 10px; transform: scale(1);}
 	}
 
 	.homea {
