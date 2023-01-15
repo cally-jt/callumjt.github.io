@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+.sidebar {
+height: 100%;
+width: 0;
+position: fixed;
+top: 0;
+left: 0;
+background-color: lightblue;
+overflow-x: hidden;
+transition: 0.5s;
+padding-top: 60px;
+z-index: 2;
+}
+
+.sidebar div {
+padding: 8px 8px 8px 30px;
+font-size: 24px;
+display: block;
+transition: 0.5s;
+cursor: pointer;
+}
+
+.sidebar .closebtn {
+position: absolute;
+top: 0;
+right: 25px;
+font-size: 36px;
+}
+
+.openbtn {
+font-size: 24px;
+cursor: pointer;
+background-color: lightblue;
+z-index: 1;
+}
+
+#main {
+transition: margin-left .5s;
+}
+
+</style>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+
+    <div class="spacer background"></div>
+
+<div id="mySidebar" class="sidebar">
+<div class="closebtn" onclick="closeNav()">×</div>
+<div>About</div>
+<div>Services</div>
+<div>Clients</div>
+</div>
+
+<div id="main">
+<button class="openbtn" onclick="openNav()">Open Sidebar</button> 
+<p> text bla bla bla </p>
+</div>
+
+<script>
+function openNav() {
+document.getElementById("mySidebar").style.width = "250px";
+}
+
+function closeNav() {
+document.getElementById("mySidebar").style.width = "0";
+}
+</script>
+
+</body>
+</html>

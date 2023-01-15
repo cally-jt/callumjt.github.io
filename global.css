@@ -1,11 +1,27 @@
 	:root {
-		--background1: #510797;
-		--background2: rgb(0, 0, 0);
+		position: relative;
 	}
 	
 	body {
 		font-family: arial;
-		background: linear-gradient(var(--background1), var(--background2)) fixed;
+	}
+	
+	.spacer {
+		aspect-ratio: 900/600;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		position: fixed;
+		z-index: -999999;
+		left: -0.5px;
+		right: auto;
+		bottom: 0px;
+		height: 100%;
+	}
+
+	.background {
+		background-image: url('../storing/background.svg');
 	}
 	
 	.navbar {
