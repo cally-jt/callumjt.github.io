@@ -4,44 +4,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
-.sidebar {
-height: 100%;
-width: 0;
-position: fixed;
-top: 0;
-left: 0;
-background-color: lightblue;
-overflow-x: hidden;
-transition: 0.5s;
-padding-top: 60px;
-z-index: 2;
-}
+    .sidebar {
+        height: 100%;
+        width: 29px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        z-index: 2;
+    }
 
-.sidebar div {
-padding: 8px 8px 8px 30px;
-font-size: 24px;
-display: block;
-transition: 0.5s;
-cursor: pointer;
-}
+    .sidebar:hover {
+        width: 250px;
+    }
 
-.sidebar .closebtn {
-position: absolute;
-top: 0;
-right: 25px;
-font-size: 36px;
-}
+    .sidebar div {
+        padding: 8px 8px 8px 30px;
+        font-size: 24px;
+        display: block;
+        transition: 0.5s;
+        cursor: pointer;
+    }
 
-.openbtn {
-font-size: 24px;
-cursor: pointer;
-background-color: lightblue;
-z-index: 1;
-}
+    .testext {
+        color: rgb(255, 255, 255);
+        left: 50px;
+        position: absolute;
+    }
 
-#main {
-transition: margin-left .5s;
-}
+    #main {
+        transition: margin-left .5s;
+    }
+
+    .sidebarCol {
+        color:rgb(255, 255, 255);
+        position: absolute;
+        white-space: nowrap
+    }
+
+    .sidebarL {
+        top: -60px;
+        position: absolute;
+    }
 
 </style>
     <link rel="stylesheet" href="global.css">
@@ -50,27 +57,19 @@ transition: margin-left .5s;
 
     <div class="spacer background"></div>
 
-<div id="mySidebar" class="sidebar">
-<div class="closebtn" onclick="closeNav()">×</div>
-<div>About</div>
-<div>Services</div>
-<div>Clients</div>
-</div>
+    <div id="mySidebar" class="sidebar">
+        <div class="sidebarCol">
+            <p class="sidebarL"><b>Callumjt</b></p>
+            <p><img src="storing/home.png" style="width: 25px; height: 25px;"> Home</p>
+            <p><img src="storing/user.png" style="width: 25px; height: 25px;"> About</p>
+            <p><img src="storing/download.png" style="width: 25px; height: 25px;"> Games</p>
+            <p><img src="storing/social-media.png" style="width: 25px; height: 25px;"> Social</p>
+        </div>
+    </div>
 
-<div id="main">
-<button class="openbtn" onclick="openNav()">Open Sidebar</button> 
-<p> text bla bla bla </p>
-</div>
-
-<script>
-function openNav() {
-document.getElementById("mySidebar").style.width = "250px";
-}
-
-function closeNav() {
-document.getElementById("mySidebar").style.width = "0";
-}
-</script>
+    <div id="main">
+        <p class="testext"> text bla bla bla </p>
+    </div>
 
 </body>
 </html>
