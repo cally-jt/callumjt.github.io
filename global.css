@@ -5,6 +5,11 @@
 	body {
 		font-family: arial;
 	}
+
+	a {
+		text-decoration: none;
+		color: white;
+	}
 	
 	.spacer {
 		aspect-ratio: 900/600;
@@ -23,182 +28,6 @@
 	.background {
 		background-image: url('../storing/background.svg');
 	}
-	
-	.navbar {
-	background-color: rgba(11, 110, 165, 0);
-    color: white;
-    padding: 1.4rem;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100vw;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    z-index: -1;
-	}
-	
-	.flex {
-	display: flex;
-	justify-content: flex-end;
-	gap: 53px;
-	width: 96%;
-	}
-	
-	.home {
-	animation-name: homeOff;
-	animation-duration: 0.5s;
-	padding: 0.2rem;
-	width: 38px;
-	position: absolute;
-	top: 10px;
-	background-color: rgba(85, 85, 85, 0);
-	z-index: 1;
-	height: 38px;
-	transform: scale(1);
-	}
-	
-	.about {
-	animation-name: aboutOff;
-	animation-duration: 0.5s;
-	padding: 0.2rem;
-	width: 38px;
-	position: absolute;
-	top: 10px;
-	background-color: rgba(85, 85, 85, 0);
-	z-index: 2;
-	height: 38px;
-	transform: scale(1);
-	}
-	
-	.download {
-	animation-name: downloadOff;
-	animation-duration: 0.5s;
-	padding: 0.2rem;
-	width: 38px;
-	position: absolute;
-	top: 10px;
-	background-color: rgba(85, 85, 85, 0);
-	z-index: 2;
-	height: 38px;
-	transform: scale(1);
-	}
-
-	.socialt {
-	animation-name: socialOff;
-	animation-duration: 0.5s;
-	padding: 0.2rem;
-	width: 38px;
-	position: absolute;
-	top: 10px;
-	background-color: rgba(85, 85, 85, 0);
-	z-index: 2;
-	height: 38px;
-	transform: scale(1);
-		}
-	
-	.logo {
-	animation-name: logoOff;
-	animation-duration: 0.5s;
-	padding: 0.2rem;
-	width: 119px;
-	position: absolute;
-	top: -20px;
-	color: white;
-	z-index: 3;
-	height: 29px;
-	font-size: xx-large;
-	transform: scale(1);
-	}
-	
-	.Navflex {
-	width: 100%;
-	}
-
-	.logo:hover {
-		animation-name: logoOn;
-		animation-duration: 0.5s;
-		color:rgb(126, 25, 221);
-		top: -30px;
-		transform: scale(1.1);
-	}
-
-	.download:hover {
-		animation-name: downloadOn;
-		animation-duration: 0.5s;
-		top: 7px;
-		transform: scale(1.1);
-	}
-
-	.about:hover {
-		animation-name: aboutOn;
-		animation-duration: 0.5s;
-		top: 7px;
-		transform: scale(1.1);
-	}
-
-	.home:hover {
-		animation-name: homeOn;
-		animation-duration: 0.5s;
-		top: 7px;
-		transform: scale(1.1);
-	}
-
-	.socialt:hover {
-		animation-name: socialOn;
-		animation-duration: 0.5s;
-		top: 7px;
-		transform: scale(1.1);
-	}
-
-	@keyframes logoOn {
-		0% {color:white; top: -20px; transform: scale(1);}
-		100% {color: rgb(126, 25, 221); top: -30px; transform: scale(1.1);}
-	}
-
-	@keyframes logoOff {
-		0% {color: rgb(126, 25, 221); top: -30px; transform: scale(1.1);}
-		100% {color:white; top: -20px; transform: scale(1);}
-	}
-
-	@keyframes downloadOn {
-		0% {top: 10px; transform: scale(1);}
-		100% {top: 7px; transform: scale(1.1);}
-	}
-
-	@keyframes downloadOff {
-		0% {top: 7px; transform: scale(1.1);}
-		100% {top: 10px; transform: scale(1);}
-	}
-
-	@keyframes aboutOn {
-		0% {top: 10px; transform: scale(1);}
-		100% {top: 7px; transform: scale(1.1);}
-	}
-
-	@keyframes aboutOff {
-		0% {top: 7px; transform: scale(1.1);}
-		100% {top: 10px; transform: scale(1);}
-	}
-
-	@keyframes homeOn {
-		0% {top: 10px; transform: scale(1);}
-		100% {top: 7px; transform: scale(1.1);}
-	}
-
-	@keyframes homeOff {
-		0% {top: 7px; transform: scale(1.1);}
-		100% {top: 10px; transform: scale(1);}
-	}
-
-	@keyframes socialOn {
-		0% {top: 10px; transform: scale(1);}
-		100% {top: 7px; transform: scale(1.1);}
-	}
-
-	@keyframes socialOff {
-		0% {top: 7px; transform: scale(1.1);}
-		100% {top: 10px; transform: scale(1);}
-	}
 
 	.homea {
 		position: absolute;
@@ -213,4 +42,73 @@
 		transform: scale(1.2, 1.2) translate(50%, 0);
 		right: 51%;
 		color: rgb(29, 243, 243);
-	  }
+	}
+
+	.sidebar {
+        width: 0px;
+		height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        z-index: 2;
+    }
+
+    .sidebar:hover {
+        width: 250px;
+    }
+
+    .sidebar div {
+        padding: 8px 8px 8px 30px;
+        font-size: 24px;
+        display: block;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    .testext {
+        color: rgb(255, 255, 255);
+        left: 50px;
+        position: absolute;
+    }
+
+    #main {
+        transition: margin-left .5s;
+    }
+
+    .sidebarCol {
+        color:rgb(255, 255, 255);
+        position: absolute;
+        white-space: nowrap;
+    }
+
+    .sidebarL {
+        top: -60px;
+        position: absolute;
+    }
+
+	.openbtn {
+		opacity: 0%;
+		top: 0px;
+		left: 0px;
+		filter: drop-shadow(7px 7px 7px rgb(0, 0, 0));
+		z-index: 1;
+	}
+
+	@media only screen and (max-width: 600px) {
+		.sidebar {
+			width: 0px;
+		}
+		
+		.openbtn {
+			opacity: 100%;
+		}
+	}
+
+	button {
+		background: transparent;
+		border: none !important;
+	}
