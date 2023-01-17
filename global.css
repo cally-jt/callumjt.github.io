@@ -1,114 +1,125 @@
-	:root {
-		position: relative;
-	}
-	
-	body {
-		font-family: arial;
-	}
+:root {
+	--screen: true;
+}
 
-	a {
-		text-decoration: none;
-		color: white;
-	}
-	
-	.spacer {
-		aspect-ratio: 900/600;
-		width: 100%;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: cover;
-		position: fixed;
-		z-index: -999999;
-		left: -0.5px;
-		right: auto;
-		bottom: 0px;
-		height: 100%;
-	}
+body {
+	font-family: arial;
+}
 
-	.background {
-		background-image: url('../storing/background.svg');
-	}
+a {
+	text-decoration: none;
+	color: white;
+}
 
-	.homea {
-		position: absolute;
-		font-size: 3rem;
-		right: 50%;
-		transform: translate(50%, 0);
-		color: white;
-		transition: all cubic-bezier(.77,.08,.83,.67) 0.2s;
-	  }
-	  
-	  .homea:hover {
-		transform: scale(1.2, 1.2) translate(50%, 0);
-		right: 51%;
-		color: rgb(29, 243, 243);
-	}
+.spacer {
+	aspect-ratio: 900/600;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: fixed;
+	z-index: -999999;
+	left: -0.5px;
+	right: auto;
+	bottom: 0px;
+	height: 100%;
+}
 
+.background {
+	background-image: url('../storing/background.svg');
+}
+
+.homea {
+	position: absolute;
+	font-size: 3rem;
+	right: 50%;
+	transform: translate(50%, 0);
+	color: white;
+	transition: all cubic-bezier(.77,.08,.83,.67) 0.2s;
+  }
+  
+  .homea:hover {
+	transform: scale(1.2, 1.2) translate(50%, 0);
+	right: 51%;
+	color: rgb(29, 243, 243);
+}
+
+.sidebar {
+	width: 29px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+	z-index: 1;
+}
+
+.sidebar:hover {
+	width: 250px;
+}
+
+.sidebar div {
+	padding: 8px 8px 8px 30px;
+	font-size: 24px;
+	display: block;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+.testext {
+	color: rgb(255, 255, 255);
+	left: 50px;
+	position: absolute;
+	opacity: 100%;
+	z-index: -2;
+}
+
+#main {
+	transition: margin-left .5s;
+}
+
+.sidebarCol {
+	color:rgb(255, 255, 255);
+	position: absolute;
+	white-space: nowrap;
+}
+
+.sidebarL {
+	top: -60px;
+	position: absolute;
+}
+
+.openbtn {
+	opacity: 0%;
+	top: 0px;
+	left: 0px;
+	filter: drop-shadow(7px 7px 7px rgb(0, 0, 0));
+	z-index: 1;
+}
+
+.closebtn {
+	opacity: 0%;
+	right: 1px;
+	top: 1px;
+	z-index: 6;
+	position: absolute;
+	color: white;
+}
+
+@media only screen and (max-width: 600px) {
 	.sidebar {
-        width: 0px;
-		height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: rgba(0, 0, 0, 0.6);
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
-        z-index: 2;
-    }
-
-    .sidebar:hover {
-        width: 250px;
-    }
-
-    .sidebar div {
-        padding: 8px 8px 8px 30px;
-        font-size: 24px;
-        display: block;
-        transition: 0.5s;
-        cursor: pointer;
-    }
-
-    .testext {
-        color: rgb(255, 255, 255);
-        left: 50px;
-        position: absolute;
-    }
-
-    #main {
-        transition: margin-left .5s;
-    }
-
-    .sidebarCol {
-        color:rgb(255, 255, 255);
-        position: absolute;
-        white-space: nowrap;
-    }
-
-    .sidebarL {
-        top: -60px;
-        position: absolute;
-    }
-
+		width: 0px;
+	}
+	
 	.openbtn {
-		opacity: 0%;
-		top: 0px;
-		left: 0px;
-		filter: drop-shadow(7px 7px 7px rgb(0, 0, 0));
-		z-index: 1;
+		opacity: 100%;
 	}
+}
 
-	@media only screen and (max-width: 600px) {
-		.sidebar {
-			width: 0px;
-		}
-		
-		.openbtn {
-			opacity: 100%;
-		}
-	}
-
-	button {
-		background: transparent;
-		border: none !important;
-	}
+button {
+	background: transparent;
+	border: none !important;
+}
