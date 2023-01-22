@@ -2,8 +2,62 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testing site</title>
 <style>
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.intro{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right,#1488cc, #2b32b2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    display:flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.text{
+    flex:1;
+    padding:5rem;
+    font-size: 1.2rem;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.image{
+    flex:1;
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+
+
+.image img{
+    width: 100%;
+    object-fit: cover;
+    padding:5rem;
+}
+
+.push-right{
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.push-left{
+    opacity: 0;
+    transform: translateX(-50px);
+}
 </style>
     <link rel="stylesheet" href="global.css">
     <script src="code.js"></script>
@@ -17,7 +71,7 @@
             <a href="/home">
                 <p class="sidebarL"><b>Callumjt</b></p>
             </a>
-            <a href="/home">
+            <a href="/home" class="home">
                 <p><img src="storing/home.png" style="width: 25px; height: 25px;"> Home</p>
             </a>
             <a href="/about">
@@ -40,9 +94,6 @@
 		<button onclick="Close()" style="top: 0px; right: 0px;"><div class="x"></div></button>
 	</div>
 
-    <div id="main" class="testext">
-        <p> text bla bla bla </p>
-    </div>
 
 </body>
 </html>

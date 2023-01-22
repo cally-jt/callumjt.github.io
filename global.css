@@ -139,9 +139,32 @@ button {
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
-  }
-  .x::after {
+}
+.x::after {
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
-  }
+}
+
+.home:hover {
+	animation-name: homea;
+	animation-duration: 0.45s;
+	left: 15px;
+}
+
+.home {
+	animation-name: homeb;
+	animation-duration: 0.45s;
+	left: 0px;
+	position: relative;
+}
+
+@keyframes homea {
+	0%{left: 0px;}
+	100%{left: 15px;}
+}
+
+@keyframes homeb {
+	0%{left: 15px;}
+	100%{left: 0px;}
+}
