@@ -1,99 +1,112 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Testing site</title>
+<title>Callumjts website</title>
+    <meta content="Callumjt's website" property="og:title" />
+    <meta content="This site is owned by callumjt and is very cool. Join the discord for support and giving suggestions: https://discord.gg/WmCZYtJZWy" property="og:description" />
+    <meta content="https://callumjt.is-a.dev" property="og:url" />
+    <meta content="https://raw.githubusercontent.com/callumjt/callumjt.github.io/main/storing/pic1.webp" property="og:image" />
+    <meta content="#9900cc" data-react-helmet="true" name="theme-color" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="srcs/imgs/pic1.png">
+<html lang="en">
+
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
+    .navbar {
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        background-color: var(--navbarcol);
+        box-shadow: var(--navbarsh);
+    }
 
-.intro{
-    height: 100vh;
-    width: 100%;
-    background: linear-gradient(to right,#1488cc, #2b32b2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .navbar p {
+        color: rgb(255, 255, 255);
+    }
 
-.content{
-    display:flex;
-    align-items: center;
-    overflow: hidden;
-}
+    .navbar img {
+        top: 50%;
+        position: relative;
+        border-radius: 15px;
+    }
 
-.text{
-    flex:1;
-    padding:5rem;
-    font-size: 1.2rem;
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 0.5s ease-in-out;
-}
+    .btns {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        width: 98%;
+        height: 70px;
+        justify-content: end;
+        top: -80px;
+        position: relative;
+    }
 
-.image{
-    flex:1;
-    opacity: 1;
-    transform: translateX(0);
-    transition: all 0.5s ease-in-out;
-}
+    .left {
+        padding-left: 10px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        line-height: 65px;
+        font-size: 25px;
+        position: relative;
+        font-family: Sofia;
+    }
 
+    .btn {
+        width: 95px;
+        height: 42px;
+        background-color: rgba(65, 65, 65, 0);
+        transition: all 0.3s;
+        border-radius: 5px;
+        padding-top: 4px;
+    }
 
-.image img{
-    width: 100%;
-    object-fit: cover;
-    padding:5rem;
-}
+    .btn p {
+        text-align: center;
+    }
 
-.push-right{
-    opacity: 0;
-    transform: translateX(50px);
-}
+    .btn:hover {
+        background-color: rgba(65, 65, 65, 1)
+    }
 
-.push-left{
-    opacity: 0;
-    transform: translateX(-50px);
-}
 </style>
-    <link rel="stylesheet" href="global.css">
-    <script src="code.js"></script>
+
+<head>
+<meta name="color-scheme" content="light dark">
+<link rel="stylesheet" href="css/pico.min.css">
+<link rel="stylesheet" href="global.css">
 </head>
+
 <body>
 
     <div class="spacer background"></div>
 
-    <div id="mysidebar" class="sidebar">
-        <div class="sidebarCol">
-            <a href="/home">
-                <p class="sidebarL"><b>Callumjt</b></p>
-            </a>
-            <a href="/home" class="home">
-                <p><img src="storing/home.png" style="width: 25px; height: 25px;"> Home</p>
-            </a>
-            <a href="/about">
-                <p><img src="storing/user.png" style="width: 25px; height: 25px;"> About</p>
-            </a>
-            <a href="/downloads">
-                <p><img src="storing/download.png" style="width: 25px; height: 25px;"> Games</p>
-            </a>
-            <a href="socials">    
-                <p><img src="storing/social-media.png" style="width: 25px; height: 25px;"> Social</p>
-            </a>
+    <div class="navbar">
+        <div class="left">
+            <img src="srcs/imgs/pic1.png" style="height: 48px; width: 48px; position: relative; top: 10px;">
+            <p>Callumjt</p>
         </div>
+
+        <div class="btns"> 
+
+            <div class="btn">
+                <p>Home</p> 
+            </div>
+            
+            <div class="btn">
+                <p>Games</p> 
+            </div>
+
+            <div class="btn">
+                <p>Devlogs</p> 
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="openbtn" id="open">
-        <button onclick="Opennav()"><img src="../storing/sidebarbtn.png" style="width: 40px; height: 40px;"></button>
-    </div>
-	
-	<div class="closebtn" id="close">
-		<button onclick="Close()" style="top: 0px; right: 0px;"><div class="x"></div></button>
-	</div>
-
-
+    
 </body>
+
 </html>
