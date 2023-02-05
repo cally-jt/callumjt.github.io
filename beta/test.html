@@ -11,6 +11,67 @@
     <link rel="icon" href="srcs/imgs/pic1.png">
 <html lang="en">
 
+<style>
+
+    .navbar {
+        width: 100%;
+        height: 70px;
+        position: absolute;
+        background-color: var(--navbarcol);
+        box-shadow: var(--navbarsh);
+    }
+
+    .navbar p {
+        color: rgb(255, 255, 255);
+    }
+
+    .navbar img {
+        top: 50%;
+        position: relative;
+        border-radius: 15px;
+    }
+
+    .btns {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        width: 98%;
+        height: 70px;
+        justify-content: end;
+        top: -80px;
+        position: relative;
+    }
+
+    .left {
+        padding-left: 10px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        line-height: 65px;
+        font-size: 25px;
+        position: relative;
+        font-family: Sofia;
+    }
+
+    .btn {
+        width: 95px;
+        height: 42px;
+        background-color: rgba(65, 65, 65, 0);
+        transition: all 0.3s;
+        border-radius: 5px;
+        padding-top: 4px;
+    }
+
+    .btn p {
+        text-align: center;
+    }
+
+    .btn:hover {
+        background-color: rgba(65, 65, 65, 1)
+    }
+
+</style>
+
 <head>
 <meta name="color-scheme" content="light dark">
 <link rel="stylesheet" href="css/pico.min.css">
@@ -21,29 +82,28 @@
 
     <div class="spacer background"></div>
 
-    <div class="sidebar">
-        <div class="cursorpo">
-            <a href="/home">
-                <div class="home">
-                    <img src="srcs/imgs/home.png">
-                    <p>Home</p>
-                </div>
-            </a>
-
-            <a href="/downloads">
-                <div class="download">
-                    <img src="srcs/imgs/download.png">
-                    <p>Download</p>
-                </div>
-            </a>
-
-            <a href="/devlogs">
-                <div class="devlog">
-                    <img src="srcs/imgs/devlog.png">
-                    <p>Devlogs</p>
-                </div>
-            </a>
+    <div class="navbar">
+        <div class="left">
+            <img src="/srcs/imgs/pic1.png" style="height: 48px; width: 48px; position: relative; top: 10px;">
+            <p>Callumjt</p>
         </div>
+
+        <div class="btns"> 
+
+            <div class="btn">
+                <p>Home</p> 
+            </div>
+            
+            <div class="btn">
+                <p>Games</p> 
+            </div>
+
+            <div class="btn">
+                <p>Devlogs</p> 
+            </div>
+
+        </div>
+
     </div>
 
     
