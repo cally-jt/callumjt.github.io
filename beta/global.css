@@ -4,6 +4,8 @@
     --sidebarsh: 1px 1px 8px 0px #000000;
     --downloadgr: linear-gradient(rgb(38, 135, 214), rgb(29, 48, 218));
     --downloadgr2: linear-gradient(rgb(218, 29, 29), rgb(167, 26, 68));
+    --navbarcol: rgba(0, 0, 0, 1);
+    --navbarsh: 1px 1px 8px 0px #000000;
 }
 
 a {
