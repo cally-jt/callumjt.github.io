@@ -1,0 +1,108 @@
+:root {
+    --sidebarcol: linear-gradient(rgba(51, 51, 51, 0.3), rgba(39, 39, 39, 0.3));
+    --sidebarhov: rgba(65, 65, 65, 1);
+    --sidebarsh: 1px 1px 8px 0px #000000;
+    --downloadgr: linear-gradient(rgb(38, 135, 214), rgb(29, 48, 218));
+    --downloadgr2: linear-gradient(rgb(218, 29, 29), rgb(167, 26, 68));
+}
+
+a {
+    text-decoration: none;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+.spacer {
+	aspect-ratio: 900/600;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	position: fixed;
+	z-index: -999999;
+	left: -0.5px;
+	right: auto;
+	bottom: 0px;
+	height: 100%;
+}
+
+.cursorpo {
+    cursor: pointer;
+}
+
+.background {
+	background-image: url('srcs/imgs/background.svg');
+}
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 90px;
+    background-image: var(--sidebarcol);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    box-shadow: var(--sidebarsh);
+}
+
+.sidebar p {
+    font-size: 0.8rem;
+    color: white;
+}
+
+.sidebar img {
+    width: 35px;
+    height: 35px;
+}
+
+.home, .download, .devlog {
+    z-index: 1;
+    background-color: var(--sidebarcol);
+    text-align: center;
+    width: 80px;
+    height: 70px;
+    padding-top: 10px;
+    transition: all 0.3s;
+    position: relative;
+    border-radius: 8px;
+}
+
+.home:hover, .download:hover, .devlog:hover {
+    background-color: var(--sidebarhov);
+}
+
+.home {
+    left: 5%;
+    top: 5%;
+}
+
+.download {
+    top: 10%;
+    left: 5%;
+}
+
+.download p {
+    font-size: 0.7rem;
+}
+
+.devlog {
+    left: 5%;
+    top: 15%;
+}
+
+@font-face {
+    font-family:"Cubano";
+    src: url(fonts/Cubano-Regular.otf) format("opentype");
+}
+  
+  
+@font-face {
+    font-family:"Sofia";
+    src: url(fonts/Sofia_Pro_Bold_Az.otf) format("opentype");
+} 
+  

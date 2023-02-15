@@ -11,6 +11,12 @@ a {
 	color: white;
 }
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
 .spacer {
 	aspect-ratio: 900/600;
 	width: 100%;
@@ -55,6 +61,7 @@ a {
 	transition: 0.5s;
 	padding-top: 60px;
 	z-index: 1;
+	box-sizing: border-box;
 }
 
 .sidebar:hover {
