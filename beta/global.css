@@ -1,14 +1,10 @@
 :root {
-    --sidebarcol: linear-gradient(rgba(51, 51, 51, 0.3), rgba(39, 39, 39, 0.3));
-    --sidebarhov: rgba(65, 65, 65, 1);
-    --sidebarsh: 1px 1px 8px 0px #000000;
-    --downloadgr: linear-gradient(rgb(38, 135, 214), rgb(29, 48, 218));
-    --downloadgr2: linear-gradient(rgb(218, 29, 29), rgb(167, 26, 68));
-
     --navbarcol: rgba(0, 0, 0, .7);
     --navbarsh: 1px 1px 8px 0px #000000;
     --navbarho: rgba(204, 204, 204, 1);
     --navbarno: rgba(65, 65, 65, 0);
+
+    --primary-focus: rgba(0, 0, 0, 0) !important;
 }
 
 a {
@@ -35,57 +31,8 @@ a {
 	height: 100%;
 }
 
-.cursorpo {
-    cursor: pointer;
-}
-
 .background {
 	background-image: url('srcs/imgs/background.svg');
-}
-
-.sidebar {
-    position: fixed;
-    height: 100%;
-    width: 90px;
-    background-image: var(--sidebarcol);
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    box-shadow: var(--sidebarsh);
-}
-
-.sidebar p {
-    font-size: 0.8rem;
-    color: white;
-}
-
-.sidebar img {
-    width: 35px;
-    height: 35px;
-}
-
-.home:hover, .download:hover, .devlog:hover {
-    background-color: var(--sidebarhov);
-}
-
-.home {
-    left: 5%;
-    top: 5%;
-}
-
-.download {
-    top: 10%;
-    left: 5%;
-}
-
-.download p {
-    font-size: 0.7rem;
-}
-
-.devlog {
-    left: 5%;
-    top: 15%;
 }
 
 @font-face {
@@ -131,6 +78,7 @@ a {
     top: -80px;
     position: relative;
     z-index: 10000000;
+    font-size: medium !important;
 }
 
 .left {

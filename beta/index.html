@@ -34,7 +34,7 @@
 
     .socialsBox {
         width: 60%;
-        height: 40%;
+        height: 373px;
         background-color: rgb(34, 36, 41);
         position: absolute;
         top: 30%;
@@ -71,13 +71,103 @@
         top: 10%;
         position: relative;
    }
-   
-   #devlogN {
-        text-align: center;
-        color: white;
-        z-index: 999;
+
+   .cards {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        flex-wrap: wrap;
+   }
+
+   .gameCard {
+        width: 756px;
+        height: 373px;
+        background-color: rgb(34, 36, 41);
+        position: absolute;
+        left: 8%;
+        top: 115%;
+        border-radius: 10px;
+        font-family: Sofia;
+   }
+
+   .gameCard a {
+        display: flex;
+   }
+
+   .latest {
+        color: rgb(254 157 67);
         position: relative;
-        top: 10000px;
+        width: 50%;
+        left: 47%;
+        top: -200px;
+   }
+
+   .gameName {
+        position: relative;
+        width: 50%;
+        left: 47%;
+        top: -250px;
+   }
+   
+   .gameDesc {
+        position: relative;
+        width: 50%;
+        left: 47.2%;
+        top: -315px;
+   }
+
+   .gameButton {
+        transform: scale(1);
+        height: 60px;
+        background-color: #4275ff;
+        width: 100%;
+        position: relative;
+        text-align: center;
+        border-radius: 9999px;
+        box-shadow: 0 -10px 12px 0 rgb(66 117 255 / 20%), 0 10px 12px 0 rgb(66 117 255 / 19%);
+        transition: all .5s;
+   }
+
+   .gameButton p {
+        color: white;
+        position: relative;
+        top: 25%;
+        text-align: center;
+        left: -10px;
+   }
+
+   .gameButton:hover {
+        transform: scale(1.1);
+   }
+
+   .devlogCard {
+        width: 756px;
+        height: 373px;
+        background-color: rgb(34, 36, 41);
+        position: absolute;
+        left: 51%;
+        top: 115%;
+        border-radius: 10px;
+        font-family: Sofia;
+        z-index: -100;
+   }
+
+   .devlogCard a {
+        display: flex;
+   }
+
+   .devlogName {
+        position: relative;
+        width: 50%;
+        left: 47%;
+        top: -250px;
+   }
+   
+   .devlogDesc {
+        position: relative;
+        width: 50%;
+        left: 47.2%;
+        top: -315px;
    }
 
 </style>
@@ -153,17 +243,52 @@
         </div>
     </div>
 
-    <div>
-        <p id="devlogN"></p>
+    <div class="cards">    
+        <div class="gameCard">
+            <img src="srcs/imgs/gameimg.png" style="top: 14%; left: 5%; position: relative; border-radius: 10px;">
+            <p class="latest">Latest game release!</p>
+            <h1 class="gameName"></h1>
+            <p class="gameDesc"></p>
+
+            <a href="/downloads" style="position: relative; top: -320px; width: 30%; left: 48%;">
+                <div class="gameButton">
+                    <p>Download</p>
+                    <img src="srcs/imgs/arrow.svg" style="position: relative; width: 20px; height: 20px; top: -47px; left: 55px;">
+                </div>
+            </a>
+
+        </div>
+
+        <div class="devlogCard">
+            <img src="srcs/imgs/gameimg.png" style="top: 14%; left: 5%; position: relative; border-radius: 10px;">
+            <p class="latest">Latest devlog!</p>
+            <h1 class="devlogName"></h1>
+            <p class="devlogDesc"></p>
+
+            <a href="#" style="position: relative; top: -320px; width: 30%; left: 48%;">
+                <div class="gameButton">
+                    <p>Read more</p>
+                    <img src="srcs/imgs/arrow.svg" style="position: relative; width: 20px; height: 20px; top: -47px; left: 55px;">
+                </div>
+            </a>
+
+        </div>
+    
     </div>
 
+
+    <p style="position: relative; top: 1700px; color: rgba(0, 0, 0, 0)">s</p>
 
     <script>
         fetch("info.json")
             .then(response => response.json())
             .then(data => {
                 console.log(data)
-                document.querySelector("#devlogN").innerText = data.name
+                document.querySelector(".gameName").innerText = data.gameName
+                document.querySelector(".gameDesc").innerText = data.gameDesc
+
+                document.querySelector(".devlogName").innerText = data.devlogName
+                document.querySelector(".devlogDesc").innerText = data.devlogDesc
             })
     </script>
 </body>
