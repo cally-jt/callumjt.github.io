@@ -13,7 +13,6 @@
 <head>
 
 <meta name="color-scheme" content="light dark">
-<link rel="stylesheet" href="css/pico.min.css">
 <link rel="stylesheet" href="global.css">
 
 <style>
@@ -57,13 +56,25 @@
     }
 
     .cookie {
+	  transition-name: cookie;
+	  transition-duration: 1s ease-in-out;
       width: 100px;
       height: 100px;
       background-color: white;
-      left: 47.5%;
+      left: 46.5%;
       top: 40%;
       position: absolute;
+	  transition: transform .3s;
     }
+	
+	@keyframes cookie {
+	0% {transform: rotation(85deg);}
+	100% {transform: rotation(-85deg);}
+	} 
+	
+	.cookie:hover {
+	transform: scale(1.1);
+	}
 
     #count {
       color: white;
@@ -72,7 +83,29 @@
       text-align: center;
       position: relative;
       top: 100px;
+	  user-select: none;
     }
+	
+	.upgrades {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	font-family: Sofia;
+	width: 100%;
+	justify-content: center;
+	gap: 10px;
+	}
+	
+	.upgrade1, .upgrade2 {
+	position: relative;
+	width: 10%;
+	height: 50px;
+	background-color: white;
+	text-align: center;
+	color: black;
+	line-height: 50px;
+	left: 80%;
+	}
 
 </style>
 
@@ -90,6 +123,17 @@
     </div>
 
     <h1 id="count"></h1>
+	
+	<div class="upgrades">
+		<div class="upgrade1" id="upgrade1">
+		</div>
+		
+		<div class="upgrade2" id="upgrade2">
+		</div>
+	</div>
+	
+	
+	<button onClick="reset()">reset</button>
 
 </body>
 
