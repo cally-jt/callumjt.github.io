@@ -48,7 +48,6 @@ document.getElementById("el").addEventListener("click", function() {
     cookie = cookie + clickPer;
     document.getElementById("count").innerText = cookie;
 	window.localStorage.setItem("cookie", cookie);
-	console.log(cookie)
 });
 
 // click function
@@ -85,3 +84,14 @@ function reset() {
 	localStorage.clear();
 	location.reload()
 };
+
+
+document.getElementById("settings").addEventListener("click", function() {
+    document.getElementById("settingsPage").style.opacity = 1;
+    document.getElementById("settingsPage").style.zIndex = 999;
+});
+
+document.getElementById("close").addEventListener("click", function() {
+    document.getElementById("settingsPage").style.opacity = 0;
+    document.getElementById("settingsPage").style.zIndex = -999;
+});

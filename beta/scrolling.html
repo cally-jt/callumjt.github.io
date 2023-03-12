@@ -17,74 +17,67 @@
 
 <style>
 
-    :root {
-      --cookie: 0;
+  :root {
+    --cookie: 0;
+  }
+  
+  .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .dots {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(#11a2ce 15%, transparent 0) 0 0 / 50px 50px repeat;
+    background-size: 75px 75px;
+    z-index: -1;
+    animation: scroll .5s linear infinite;
+  }
+  
+  @keyframes scroll {
+    0% {
+      background-position: 75px 0;
     }
-    
-    .background-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
+    100% {
+      background-position: 0 0;
     }
-    
-    .dots {
-      position: absolute;
-      top: 10px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-      width: 150%;
-      height: 150%;
-      background: radial-gradient(#11a2ce 15%, transparent 0) 0 0 / 50px 50px repeat;
-      background-size: 75px 75px;
-      z-index: -1;
-      animation: scroll .5s linear infinite;
-    }
-    
-    @keyframes scroll {
-      0% {
-        background-position: 75px 0;
-      }
-      100% {
-        background-position: 0 0;
-      }
-    }
+  }
 
-    .cookie {
-	  transition-name: cookie;
-	  transition-duration: 1s ease-in-out;
-      width: 100px;
-      height: 100px;
-      background-color: white;
-      left: 46.5%;
-      top: 40%;
-      position: absolute;
-	  transition: transform .3s;
-    }
-	
-	@keyframes cookie {
-	0% {transform: rotation(85deg);}
-	100% {transform: rotation(-85deg);}
-	} 
+  .cookie {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  left: 47.5%;
+  top: 40%;
+  position: absolute;
+	transition: all .3s;
+  }
 	
 	.cookie:hover {
 	transform: scale(1.1);
 	}
 
-    #count {
-      color: white;
-      font-size: 2rem;
-      font-family: Sofia;
-      text-align: center;
-      position: relative;
-      top: 100px;
-	  user-select: none;
-    }
+  #count {
+  color: white;
+  font-size: 2rem;
+  font-family: Sofia;
+  text-align: center;
+  position: relative;
+  top: 100px;
+	user-select: none;
+  }
 	
 	.upgrades {
 	display: flex;
@@ -107,6 +100,44 @@
 	left: 80%;
 	}
 
+  .settings {
+    transform: rotate(0deg);
+    width: 48px;
+    height: 48px;
+    position: relative;
+    top: -135px;
+    left: 15px;
+    transition: all .3s;
+  }
+
+  .settings:hover {
+    transform: rotate(60deg);
+  }
+
+  .settingsPage {
+    width: 50%;
+    height: 600px;
+    background-color: white;
+    position: absolute;
+    border: 10px solid black;
+    border-radius: 10px;
+    top: 15%;
+    left: 25%;
+  }
+
+  #settingsPage {
+    opacity: 0;
+    z-index: -999;
+  }
+
+  .close {
+    height: 48px;
+    width: 48px;
+    position: relative;
+    top: 5px;
+    left: 95%;
+  }
+
 </style>
 
 </head>
@@ -125,15 +156,27 @@
     <h1 id="count"></h1>
 	
 	<div class="upgrades">
+
 		<div class="upgrade1" id="upgrade1">
 		</div>
 		
 		<div class="upgrade2" id="upgrade2">
 		</div>
+
 	</div>
-	
-	
-	<button onClick="reset()">reset</button>
+
+  <div class="settings" id="settings">
+    <img src="srcs/imgs/settings.svg">
+  </div>
+
+  <div class="settingsPage" id="settingsPage">
+
+    <div class="close" id="close">
+      <img src="srcs/imgs/close.svg">
+    </div>
+
+    <button onClick="reset()">reset</button>
+  </div>
 
 </body>
 
