@@ -66,9 +66,8 @@ document.getElementById("el").addEventListener("click", function() {
 document.getElementById("upgrade1").addEventListener("click", function() {
 	if (cookie >= up1P) {
 		cookie = cookie - up1P;
-		clickPer = clickPer + 1;querySelector
+		clickPer = clickPer + 1;
 		up1P = Math.round(up1P * 1.7);
-		up1P = Math.round(up1P);
 		document.getElementById("count").innerText = cookie;
 		document.getElementById("upgrade1").innerText = up1P;
 		window.localStorage.setItem("clickPer", clickPer);
