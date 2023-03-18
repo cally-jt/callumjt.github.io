@@ -33,6 +33,15 @@ document.getElementById("count").innerText = cookie;
 document.getElementById("upgrade1").innerText = up1P;
 document.getElementById("upgrade2").innerText = up2P;
 
+var checkBox = document.getElementById("background-check");
+	var dots2 = document.getElementById("dots");
+
+	if (checkBox.checked == true) {
+		dots2.style.animationName = "scroll";
+	} else {
+		dots2.style.animationName = "noscroll";
+	};
+
 // just to start off the text, variables etc
 
 setInterval(function everySecond() {
@@ -48,6 +57,8 @@ document.getElementById("el").addEventListener("click", function() {
     cookie = cookie + clickPer;
     document.getElementById("count").innerText = cookie;
 	window.localStorage.setItem("cookie", cookie);
+	document.getElementById("el").style.scale = 0.9;
+	document.getElementById("el").style.scale = 1;
 });
 
 // click function
@@ -55,8 +66,8 @@ document.getElementById("el").addEventListener("click", function() {
 document.getElementById("upgrade1").addEventListener("click", function() {
 	if (cookie >= up1P) {
 		cookie = cookie - up1P;
-		clickPer = clickPer + 1;
-		up1P = Math.round(up1P * 2);
+		clickPer = clickPer + 1;querySelector
+		up1P = Math.round(up1P * 1.7);
 		up1P = Math.round(up1P);
 		document.getElementById("count").innerText = cookie;
 		document.getElementById("upgrade1").innerText = up1P;
@@ -69,7 +80,7 @@ document.getElementById("upgrade2").addEventListener("click", function() {
 	if (cookie >= up2P) {
 		cookie = cookie - up2P;
 		perSecond = perSecond + 1;
-		up2P = Math.round(up2P * 2);
+		up2P = Math.round(up2P * 1.7);
 		document.getElementById("count").innerText = cookie;
 		document.getElementById("upgrade2").innerText = up2P;
 		window.localStorage.setItem("perSecond", perSecond);
@@ -79,12 +90,10 @@ document.getElementById("upgrade2").addEventListener("click", function() {
 
 // upgrades
 
-
 function reset() {
 	localStorage.clear();
 	location.reload()
 };
-
 
 document.getElementById("settings").addEventListener("click", function() {
     document.getElementById("settingsPage").style.opacity = 1;
@@ -95,3 +104,15 @@ document.getElementById("close").addEventListener("click", function() {
     document.getElementById("settingsPage").style.opacity = 0;
     document.getElementById("settingsPage").style.zIndex = -999;
 });
+
+function check() {
+	var checkBox = document.getElementById("background-check");
+	var dots2 = document.getElementById("dots");
+
+	if (checkBox.checked == true) {
+		dots2.style.animationName = "scroll";
+	} else {
+		dots2.style.animationName = "noscroll";
+	};
+}
+
