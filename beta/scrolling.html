@@ -17,8 +17,14 @@
 
 <style>
 
+  * {
+    user-select: none;
+    color-scheme: dark;
+  }
+
   :root {
     --cookie: 0;
+    --test: 0s;
   }
   
   .background-container {
@@ -30,8 +36,8 @@
     z-index: -1;
     overflow: hidden;
   }
-  
-  .dots {
+
+  #dots {
     position: absolute;
     top: 10px;
     left: 0;
@@ -43,7 +49,10 @@
     background: radial-gradient(#11a2ce 15%, transparent 0) 0 0 / 50px 50px repeat;
     background-size: 75px 75px;
     z-index: -1;
-    animation: scroll .5s linear infinite;
+    animation-name: scroll;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
   
   @keyframes scroll {
@@ -55,14 +64,24 @@
     }
   }
 
+  @keyframes noscroll {
+    0% {background-position: 75px 0;}
+    100% {background-position: 75px 0;}
+  }
+
   .cookie {
-  width: 100px;
-  height: 100px;
-  background-color: white;
-  left: 47.5%;
+  width: 200px;
+  height: 200px;
+  left: 45%;
   top: 40%;
   position: absolute;
 	transition: all .3s;
+  cursor: pointer;
+  }
+
+  @keyframes turn {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(180deg);}
   }
 	
 	.cookie:hover {
@@ -86,18 +105,21 @@
 	font-family: Sofia;
 	width: 100%;
 	justify-content: center;
-	gap: 10px;
+  gap: 10px;
+  top: 10px;
+  overflow-y: scroll;
 	}
 	
 	.upgrade1, .upgrade2 {
 	position: relative;
-	width: 10%;
+	width: 131px;
 	height: 50px;
 	background-color: white;
 	text-align: center;
 	color: black;
-	line-height: 50px;
-	left: 80%;
+	left: 85%;
+  border: 5px solid black;
+  border-radius: 10px;
 	}
 
   .settings {
@@ -138,6 +160,12 @@
     left: 95%;
   }
 
+  .background-check {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+
 </style>
 
 </head>
@@ -147,20 +175,25 @@
   <script defer src="cookie.js"></script>
 
     <div class="background-container">
-        <div class="dots"></div>
+        <div id="dots"></div>
     </div>
 
     <div class="cookie" id="el">
+      <img src="srcs/imgs/cookie.png" style="width: 200px; height: 200px; left: 0px; position: relative;">
     </div>
 
     <h1 id="count"></h1>
 	
 	<div class="upgrades">
 
-		<div class="upgrade1" id="upgrade1">
+		<div class="upgrade1">
+      <p id="upgrade1"></p>
+      <p>+1 per click</p>
 		</div>
 		
-		<div class="upgrade2" id="upgrade2">
+		<div class="upgrade2">
+      <p id="upgrade2"></p>
+      <p>+1 per second</p>
 		</div>
 
 	</div>
@@ -176,6 +209,12 @@
     </div>
 
     <button onClick="reset()">reset</button>
+
+    <div class="background-check">
+      <p style="color: black; font-family: Sofia;">Moving background</p>
+      <input type="checkbox" id="background-check" onclick="check()">
+    </div>
+
   </div>
 
 </body>
