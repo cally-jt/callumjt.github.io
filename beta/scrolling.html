@@ -29,6 +29,11 @@
 
   body {
     background-color: rgb(19, 18, 21);
+    height: 100%;
+  }
+
+  html {
+    height: 100%;
   }
   
   .background-container {
@@ -54,7 +59,7 @@
     background-size: 75px 75px;
     z-index: -1;
     animation-name: scroll;
-    animation-duration: .5s;
+    animation-duration: .7s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
@@ -119,7 +124,7 @@
 	justify-content: center;
   gap: 15px;
   top: 30px;
-  overflow-y: scroll;
+  overflow-x: scroll;
 	}
 	
 	.upgrade1, .upgrade2, .upgrade3 {
@@ -248,11 +253,137 @@
     z-index: -1;
   }
 
+  .background-scroll {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    position: relative;
+    left: 1%;
+  }
+
+  .category {
+    text-decoration: underline;
+    font-size: xx-large;
+    text-decoration: bold;
+    font-family: Sofia;
+    left: 1%;
+    position: relative;
+    height: 60px;
+    top: 3%;
+  }
+
+  .infoIcon {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    top: -155px;
+    left: 15px;
+    z-index: 10;
+    background-color: rgb(64, 67, 80);
+    border: 0.8px solid rgba(255, 255, 255, 0.2);
+    box-shadow: rgba(193, 198, 217, 0.1) 0px 0px 10px;
+    border-radius: 99999px;
+    transition: all .3s;
+    display: flex;
+    flex-direction: row;
+    font-family: Sofia;
+    color: rgb(201, 204, 216);
+    font-size: larger;
+    overflow: hidden;
+    overflow-x: hidden;
+  }
+
+  .infoIcon:hover {
+    width: 150px;
+  }
+
+  .infoIcon img {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    top: -1px;
+    left: -1px;
+    transform: rotate(0deg);
+    transition: all .3s;
+  }
+
+  .infoIcon p {
+    position: relative;
+    top: 10px;
+    left: 5px;
+  }
+
+  .infoIcon:hover img {
+    transform: rotate(180deg);
+  }
+
+  .infoPage {
+    width: 50%;
+    height: 600px;
+    background-color: rgb(64, 67, 80);
+    position: absolute;
+    border: 0.8px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    top: 15%;
+    left: 25%;
+    box-shadow: rgba(193, 198, 217, 0.1) 0px 0px 10px;
+  }
+
+  #infoPage {
+    opacity: 0;
+    z-index: -999;
+  }
+
+  #total {
+    font-family: Sofia;
+    position: relative;
+    left: 1%;
+  }
+
+  #achievementBox {
+    width: 200px;
+    height: 100px;
+    background-color: rgb(64, 67, 80);
+    left: 1%;
+    position: relative;
+    border-radius: 12px;
+    transition: all .3s;
+    animation-duration: 0.6s;
+    border: 0.8px solid rgba(255, 255, 255, 0.2);
+    box-shadow: rgba(193, 198, 217, 0.1) 0px 0px 10px;
+    font-family: Sofia;
+    color: rgb(201, 204, 216);
+    word-wrap: normal;
+  }
+
+  @keyframes achievementStart {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+  }
+
+  @keyframes achievementStop {
+    0%{opacity: 1;}
+    100%{opacity: 0;}
+  }
+
+  .achievementDiv {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    top: 0;
+    position: absolute;
+    gap: 10px;
+    justify-content: end;
+    top: -10px;
+    z-index: -1;
+  }
+
 </style>
 
 </head>
 
-<body>
+<body style="height: 100%;">
 
   <script defer src="cookie.js"></script>
 
@@ -297,11 +428,20 @@
       <img src="srcs/imgs/close.svg">
     </div>
 
+    <div class="category">Save file</div>
+
     <button onClick="reset()" style="position: relative; left: 1%; color: rgb(201, 204, 216); font-family: Sofia;">reset</button>
+
+    <div class="category">Background</div>
 
     <div class="background-check" style="position: relative; left: 1%;">
       <p style="color: rgb(201, 204, 216); font-family: Sofia;">Moving background</p>
       <input type="checkbox" id="background-check" onclick="check()">
+    </div>
+
+    <div class="background-scroll">
+      <p style="color: rgb(201, 204, 216); font-family: Sofia;">Background speed (higher = slower)</p>
+      <input type="text" id="cooldown" value="0.7">
     </div>
 
   </div>
@@ -313,6 +453,23 @@
   <div id="perCount2">
     <p id="perCount"></p>
   </div>
+
+  <div class="infoIcon" id="info">
+  <img src="srcs/imgs/info.svg" style="position: relative; z-index: 10;">
+  <p>Statistics</p>
+  </div>
+
+  <div class="infoPage" id="infoPage">
+
+    <div class="close" id="close2">
+      <img src="srcs/imgs/close.svg">
+    </div>
+
+
+    <p id="total"></p>
+  </div>
+
+  <div class="achievementDiv"></div>
 
 </body>
 
