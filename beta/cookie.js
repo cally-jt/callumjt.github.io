@@ -246,7 +246,7 @@ async function achievements(id) {
 		await delay(4400)
 		div.style.animationName = "achievementStop"
 		await delay(600)
-		div.remove()
+		div.remove();
 	};
 }
 
