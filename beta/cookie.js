@@ -69,11 +69,11 @@ var allUpgrades = up1Am + up2Am + up3Am;
 var cookieSize = 1;
 
 var clickSound;
-const click1 = new Audio("/srcs/sounds/clickb1.mp3")
-const click2 = new Audio("/srcs/sounds/clickb2.mp3")
-const click3 = new Audio("/srcs/sounds/clickb3.mp3")
-const click4 = new Audio("/srcs/sounds/clickb4.mp3")
-const buySound = new Audio("/srcs/sounds/buy1.wav")
+const click1 = new Audio("srcs/sounds/clickb1.mp3")
+const click2 = new Audio("srcs/sounds/clickb2.mp3")
+const click3 = new Audio("srcs/sounds/clickb3.mp3")
+const click4 = new Audio("srcs/sounds/clickb4.mp3")
+const buySound = new Audio("srcs/sounds/buy1.wav")
 
 var mouseX;
 var mouseY;
@@ -140,7 +140,7 @@ cookieIco.addEventListener("click", async function() {
 	// creates cookie particle
 	const img = document.createElement("img")
 	img.classList = "cookieParticle"
-	img.src = "/srcs/imgs/cookie.png"
+	img.src = "srcs/imgs/cookie.png"
 	img.style.left = Math.floor(Math.random() * window.innerWidth / 2) + 200 + "px"
 	img.style.top = "100px";
 	document.querySelector(".cookiePart").appendChild(img)
