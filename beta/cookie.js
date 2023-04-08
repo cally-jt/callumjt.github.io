@@ -1,7 +1,7 @@
 let start = 0;
-let up1start = 10;
-let up2start = 25;
-let up3start = 100;
+let up1start = 15;
+let up2start = 100;
+let up3start = 1100;
 let clickperstart = 1;
 let amountstart = 0;
 
@@ -66,8 +66,21 @@ var up3Am = parseInt(window.localStorage.getItem("up3amount"));
 var totalClicks = parseInt(window.localStorage.getItem("total"));
 var achievementArray = JSON.parse(window.localStorage.getItem("achievementsGot"));
 var allUpgrades = up1Am + up2Am + up3Am;
+var cookieSize = 1;
 
-document.getElementById("count").innerText = cookie;
+var clickSound;
+const click1 = new Audio("/srcs/sounds/clickb1.mp3")
+const click2 = new Audio("/srcs/sounds/clickb2.mp3")
+const click3 = new Audio("/srcs/sounds/clickb3.mp3")
+const click4 = new Audio("/srcs/sounds/clickb4.mp3")
+const buySound = new Audio("/srcs/sounds/buy1.wav")
+
+var mouseX;
+var mouseY;
+var followX;
+var followY;
+
+document.getElementById("count").innerText = shortenNumber(cookie)
 document.getElementById("perCount").innerText = "Cookies per click: " + clickPer + " | Cookies per second: " + perSecond;
 document.getElementById("upgrade1").innerText = up1P;
 document.getElementById("upgrade2").innerText = up2P;
@@ -93,32 +106,63 @@ var achievementDesc = [0, "Click the cookie for the first time!", "your clicks a
 
 setInterval(function everySecond() {
 	cookie = cookie + perSecond;
-	document.getElementById("count").innerText = cookie;
+	document.getElementById("count").innerText = shortenNumber(cookie);
 	localStorage.setItem("cookie", cookie);
-	document.title = cookie + " cookies" + " - callumjt's cookie clicker";
+	document.title = shortenNumber(cookie) + " cookies" + " - callumjt's cookie clicker";
 }, 1000);
 
 // changes the cookies every second
 
-document.getElementById("el").addEventListener("click", function() {
-    document.documentElement.style.setProperty('--cookie', +document.documentElement.style.getPropertyValue("--cookie") + 1);
+const cookieIco = document.getElementById("el");
+
+cookieIco.addEventListener("click", async function() {
+	const delay = ms => new Promise(res => setTimeout(res, ms));
     cookie = cookie + clickPer;
 	totalClicks = totalClicks + 1;
-    document.getElementById("count").innerText = cookie;
+    document.getElementById("count").innerText = shortenNumber(cookie);
 	window.localStorage.setItem("cookie", cookie);
 	window.localStorage.setItem("total", totalClicks);
 	document.getElementById("total").innerText = "All time clicks: " + totalClicks;
+
+	// plays sounds
+	clickSound = Math.floor(Math.random() * 4) + 1;
+
+	if (clickSound == 1) {
+		click1.play();
+	} else if (clickSound == 2) {
+		click2.play();
+	} else if (clickSound == 3) {
+		click3.play();
+	} else {
+		click4.play();
+	}
+
+	// creates cookie particle
+	const img = document.createElement("img")
+	img.classList = "cookieParticle"
+	img.src = "/srcs/imgs/cookie.png"
+	img.style.left = Math.floor(Math.random() * window.innerWidth / 2) + 200 + "px"
+	img.style.top = "100px";
+	document.querySelector(".cookiePart").appendChild(img)
+
+	await delay(1000)
+	img.remove()
 });
 
-// click function
+window.addEventListener("mousemove", function(e) {
+	mouseX = e.pageX;
+  	mouseY = e.pageY;
+});
+
+// cookie function
 
 document.getElementById("upgrade1C").addEventListener("click", function() {
 	if (cookie >= up1P) {
 		cookie = cookie - up1P;
 		clickPer = clickPer + 1;
-		up1P = Math.round(up1P * 1.7);
+		up1P = Math.round(up1P * 1.15);
 		up1Am = up1Am + 1;
-		document.getElementById("count").innerText = cookie;
+		document.getElementById("count").innerText = shortenNumber(cookie);
 		document.getElementById("upgrade1").innerText = up1P;
 		document.getElementById("perCount").innerText = "Cookies per click: " + clickPer + " | Cookies per second: " + perSecond;
 		window.localStorage.setItem("clickPer", clickPer);
@@ -130,9 +174,9 @@ document.getElementById("upgrade2C").addEventListener("click", function() {
 	if (cookie >= up2P) {
 		cookie = cookie - up2P;
 		perSecond = perSecond + 1;
-		up2P = Math.round(up2P * 1.7);
+		up2P = Math.round(up2P * 1.15);
 		up2Am = up2Am + 1;
-		document.getElementById("count").innerText = cookie;
+		document.getElementById("count").innerText = shortenNumber(cookie);
 		document.getElementById("upgrade2").innerText = up2P;
 		document.getElementById("perCount").innerText = "Cookies per click: " + clickPer + " | Cookies per second: " + perSecond;
 		window.localStorage.setItem("perSecond", perSecond);
@@ -143,10 +187,10 @@ document.getElementById("upgrade2C").addEventListener("click", function() {
 document.getElementById("upgrade3C").addEventListener("click", function() {
 	if (cookie >= up3P) {
 		cookie = cookie - up3P;
-		clickPer = clickPer + 10;
-		up3P = Math.round(up3P * 1.7);
+		perSecond = perSecond + 10;
+		up3P = Math.round(up3P * 1.15);
 		up3Am = up3Am + 1;
-		document.getElementById("count").innerText = cookie;
+		document.getElementById("count").innerText = shortenNumber(cookie);
 		document.getElementById("upgrade3").innerText = up3P;
 		document.getElementById("perCount").innerText = "Cookies per click: " + clickPer + " | Cookies per second: " + perSecond;
 		window.localStorage.setItem("perSecond", perSecond);
@@ -246,7 +290,7 @@ async function achievements(id) {
 		await delay(4400)
 		div.style.animationName = "achievementStop"
 		await delay(600)
-		div.remove();
+		div.remove()
 	};
 }
 
@@ -280,3 +324,18 @@ function CheckAchievements() {
 	}
 }
 
+function shortenNumber(number, suffixes = ['k', 'm', 'b', 't', 'q', 'Q', 's', 'S', 'o', 'n', 'd', 'U', 'D', 'T', 'Qt', 'Qd', 'Sd', 'St', 'O', 'N', 'v', 'c']) {
+	if (number < 1000) {
+		return number;
+	  }
+	let suffixIndex = 0;
+	while (number >= 1000 && suffixIndex < suffixes.length - 1) {
+	  number /= 1000;
+	  suffixIndex++;
+	}
+	if (number >= 1000) {
+		return Math.floor(number * 10) / 10 + suffixes[suffixIndex];
+	  } else {
+		return Math.floor(number * 10) / 10 + suffixes[suffixIndex - 1];
+	  }
+  }
